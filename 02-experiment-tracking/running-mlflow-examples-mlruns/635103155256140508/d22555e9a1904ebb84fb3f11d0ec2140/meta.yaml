@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/635103155256140508/d22555e9a1904ebb84fb3f11d0ec2140/artifacts
+end_time: 1746301043260
+entry_point_name: ''
+experiment_id: '635103155256140508'
+lifecycle_stage: active
+run_id: d22555e9a1904ebb84fb3f11d0ec2140
+run_name: bemused-skunk-190
+run_uuid: d22555e9a1904ebb84fb3f11d0ec2140
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746301034827
+status: 3
+tags: []
+user_id: salim
