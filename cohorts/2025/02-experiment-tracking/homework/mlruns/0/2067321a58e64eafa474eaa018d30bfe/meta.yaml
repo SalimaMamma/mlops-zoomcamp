@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/salim/mlops-zoomcamp/cohorts/2025/02-experiment-tracking/homework/mlruns/0/2067321a58e64eafa474eaa018d30bfe/artifacts
+end_time: 1746310312060
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 2067321a58e64eafa474eaa018d30bfe
+run_name: youthful-steed-772
+run_uuid: 2067321a58e64eafa474eaa018d30bfe
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746310289389
+status: 3
+tags: []
+user_id: salim

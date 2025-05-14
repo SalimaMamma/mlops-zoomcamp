@@ -1,0 +1,16 @@
+artifact_uri: file:///C:/Users/salim/mlops-zoomcamp/cohorts/2025/02-experiment-tracking/homework/mlruns/0/1227de5ef4074097aa656688c93895b7/artifacts
+deleted_time: 1746310363323
+end_time: 1746309962390
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: 1227de5ef4074097aa656688c93895b7
+run_name: casual-croc-445
+run_uuid: 1227de5ef4074097aa656688c93895b7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746309936917
+status: 4
+tags: []
+user_id: salim

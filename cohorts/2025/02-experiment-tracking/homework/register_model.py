@@ -2,6 +2,7 @@ import os
 import pickle
 import click
 import mlflow
+import numpy as np
 
 from mlflow.entities import ViewType
 from mlflow.tracking import MlflowClient
@@ -36,9 +37,11 @@ def train_and_log_model(data_path, params):
         rf.fit(X_train, y_train)
 
         # Evaluate model on the validation and test sets
-        val_rmse = mean_squared_error(y_val, rf.predict(X_val), squared=False)
+        val_mse = mean_squared_error(y_val, rf.predict(X_val))
+        val_rmse = np.sqrt(val_mse)  # rmse = sqrt(val_mse
         mlflow.log_metric("val_rmse", val_rmse)
-        test_rmse = mean_squared_error(y_test, rf.predict(X_test), squared=False)
+        test_mse = mean_squared_error(y_test, rf.predict(X_test))
+        test_rmse = np.sqrt(test_mse)  # rmse = sqrt(test_mse)
         mlflow.log_metric("test_rmse", test_rmse)
 
 
@@ -66,15 +69,29 @@ def run_register_model(data_path: str, top_n: int):
         max_results=top_n,
         order_by=["metrics.rmse ASC"]
     )
+
+
+    best_test_rmse = float('inf')
+    best_run_id = None
+
+    # Evaluate each of the top_n models and log their RMSE on the test set
     for run in runs:
-        train_and_log_model(data_path=data_path, params=run.data.params)
+            test_rmse = train_and_log_model(data_path=data_path, params=run.data.params)
 
-    # Select the model with the lowest test RMSE
-    experiment = client.get_experiment_by_name(EXPERIMENT_NAME)
-    # best_run = client.search_runs( ...  )[0]
+            # Keep track of the model with the lowest test RMSE
+            if test_rmse < best_test_rmse:
+                best_test_rmse = test_rmse
+                best_run_id = run.info.run_id
 
-    # Register the best model
-    # mlflow.register_model( ... )
+        # Register the best model (model with the lowest test RMSE)
+    if best_run_id:
+            model_uri = f"runs:/{best_run_id}/model"
+            model_name = "random-forest-best-model"
+
+            # Register the model
+            mlflow.register_model(model_uri, model_name)
+            print(f"Best model registered with test RMSE: {best_test_rmse}")
+
 
 
 if __name__ == '__main__':

@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/salim/mlops-zoomcamp/cohorts/2025/02-experiment-tracking/homework/mlruns/0/d351bc223f214b50be18c2c93decaff4/artifacts
+end_time: 1746311399528
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: d351bc223f214b50be18c2c93decaff4
+run_name: painted-chimp-660
+run_uuid: d351bc223f214b50be18c2c93decaff4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746311371755
+status: 3
+tags: []
+user_id: salim

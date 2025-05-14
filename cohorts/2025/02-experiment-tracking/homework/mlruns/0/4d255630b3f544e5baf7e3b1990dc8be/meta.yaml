@@ -1,0 +1,16 @@
+artifact_uri: file:///C:/Users/salim/mlops-zoomcamp/cohorts/2025/02-experiment-tracking/homework/mlruns/0/4d255630b3f544e5baf7e3b1990dc8be/artifacts
+deleted_time: 1746310363322
+end_time: 1746310123121
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: 4d255630b3f544e5baf7e3b1990dc8be
+run_name: handsome-eel-208
+run_uuid: 4d255630b3f544e5baf7e3b1990dc8be
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746310097044
+status: 4
+tags: []
+user_id: salim
