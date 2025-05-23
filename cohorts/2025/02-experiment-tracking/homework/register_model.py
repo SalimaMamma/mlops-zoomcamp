@@ -43,6 +43,8 @@ def train_and_log_model(data_path, params):
         test_mse = mean_squared_error(y_test, rf.predict(X_test))
         test_rmse = np.sqrt(test_mse)  # rmse = sqrt(test_mse)
         mlflow.log_metric("test_rmse", test_rmse)
+        return test_rmse
+
 
 
 @click.command()
@@ -72,12 +74,13 @@ def run_register_model(data_path: str, top_n: int):
 
 
     best_test_rmse = float('inf')
+    print(type(best_test_rmse))
     best_run_id = None
 
     # Evaluate each of the top_n models and log their RMSE on the test set
     for run in runs:
             test_rmse = train_and_log_model(data_path=data_path, params=run.data.params)
-
+            print(f"Run ID: {run.info.run_id}, Test RMSE: {test_rmse}")
             # Keep track of the model with the lowest test RMSE
             if test_rmse < best_test_rmse:
                 best_test_rmse = test_rmse

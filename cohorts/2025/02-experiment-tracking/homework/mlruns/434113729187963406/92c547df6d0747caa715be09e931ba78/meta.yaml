@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/434113729187963406/92c547df6d0747caa715be09e931ba78/artifacts
+end_time: 1748035609925
+entry_point_name: ''
+experiment_id: '434113729187963406'
+lifecycle_stage: active
+run_id: 92c547df6d0747caa715be09e931ba78
+run_name: shivering-skink-551
+run_uuid: 92c547df6d0747caa715be09e931ba78
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1748035565106
+status: 3
+tags: []
+user_id: salim
