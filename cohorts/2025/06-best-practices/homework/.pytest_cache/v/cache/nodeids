@@ -1,0 +1,5 @@
+[
+  "Tests/test_batch.py::test_prepare_data",
+  "tests/integration_test.py::test_integration_batch_process",
+  "tests/test_batch.py::test_prepare_data"
+]
